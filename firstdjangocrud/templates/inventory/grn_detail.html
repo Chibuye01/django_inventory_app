@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <a href="{% url 'grn' %}"> Back to GRN List</a>
+    <ul>
+        <li>
+           <table>
+                <tr>
+                    <th> Title</th>
+                    <th> Quantity</th>
+                    <th> Price</th>
+                    <th> Value</th>
+                </tr>
+                    {% for item in items_in_grn %}
+                        <tr>
+                            <td> {{item.title}} </td>
+                            <td> {{item.quantity}} </td>
+                            <td> {{item.price}} </td>
+                            <td> {{item.value}} </td>
+                        </tr>
+                    {% endfor %}
+            </table>
+        </li>
+    </ul>
+{% endblock %}        

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h3>GRN List</h3>
+    <ul>
+        {% for grn in grns %}
+            <li>
+                <a href="{% url 'grn_detail' grn.doc_id %}">
+                    <table>
+                        <tr>
+                            <th> Number</th>
+                            <th> Date</th>
+                            <th> Supplier</th>
+                            <th> Received By</th>
+                        </tr>
+                        <tr>
+                            <td> {{grn.doc_id}} </td>
+                            <td> {{grn.date}} </td>
+                            <td> {{grn.supplier_name}} </td>
+                            <td> {{grn.received_by}} </td>
+                        </tr>
+                    </table>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}                       
+
